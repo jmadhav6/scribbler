@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<head>
+
+    <link href='..\css\post.css' rel='stylesheet' type='text/css'>
+    <link href='..\css\header.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="..\font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href='..\css\font.css' rel='stylesheet' type='text/css'>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="title-container">
+            <p class="title">ScriBBler</p>
+            <p class="sub-title">Explore, Imagine, Create</p>
+        </div>
+        <div class="login-buttons-container">
+            <button onclick="showSignInModal()" class="blue-button" type="button">Sign In</button>
+            <button onclick="showSignUpModal()" class="blue-button" type="button">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Insert code for Sign In modal here -->
+    <div class="modal" id="signin-modal">
+        <div class="modal-content">
+
+            <div class="modal-head">
+                <span onclick="hideSignInModal()" id="close" class="close">&times;</span>
+                <h2 class="modal-title">Welcome Back!</h2>
+            </div>
+
+            <hr>
+
+            <form>
+                <label for="username" class="label-text">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <label for="password" class="label-text">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <button type="submit" onclick="signin(username, password)" class="signin-btn">Sign In</button>
+            </form>
+
+            <p class=bottom-banner>Not a member?
+                <span onclick="hideSignInModal();showSignUpModal()" class=signup>Sign Up</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Insert code for Sign Up modal here -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+
+            <div class="modal-head">
+                <span onclick="hideSignUpModal()" id="close" class="close">&times;</span>
+                <h2 class="modal-title">Get Started</h2>
+            </div>
+
+            <hr>
+
+            <form>
+                <label for="fullname" class="label-text">Full name</label>
+                <input type="text" id="fullname" placeholder="Enter Full Name" required>
+                <label for="username" class="label-text">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <label for="password" class="label-text">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <label for="confirmpassword" class="label-text">Confirm Password</label>
+                <input type="password" id="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit" onclick="signup(firstName,lastName, email, password, mobile)" class="signin-btn">Sign up</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="postMainLayout">
+
+
+        <div class="blogContent">
+            <div id="blogTitle" class="blogTite">
+                <h id="blogTitleNew">The legacy of King Arthur</h>
+            </div>
+        </div>
+        <div class="blogAuthor">
+
+            <!-- Insert code for Edit/Save button and  -->
+            <p class="postAuthor">Arthur</p>
+            <div id="editPost" onclick="toggleEditSave()">
+                    <button class="postEdit" id ="edtPstBtn">Edit
+                            <i style="font-size: 14px;font-weight: bolder;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>
+                    
+            </div>
+            
+        </div>
+
+        <div class="blogText" id="blogBodyId">
+            <p id="blogBody">
+                The legendary Arthur developed as a figure of international interest largely through the popularity of Geoffrey of Monmouth's fanciful and 
+                imaginative 12th-century Historia Regum Britanniae (History of the Kings of Britain).[6] Geoffrey depicted Arthur as a king of Britain who 
+                defeated the Saxons and established a vast empire. Many elements and incidents that are now an integral part of the Arthurian story appear 
+                in Geoffrey's Historia, including Arthur's father Uther Pendragon, the magician Merlin, Arthur's wife Guinevere, the sword Excalibur, Arthur's 
+                conception at Tintagel, his final battle against Mordred at Camlann, and final rest in Avalon. The 12th-century French writer Chrétien de Troyes
+                , who added Lancelot and the Holy Grail to the story, began the genre of Arthurian romance that became a significant strand of medieval literature.
+                In these French stories, the narrative focus often shifts from King Arthur himself to other characters, such as various Knights of the Round Table.
+                The themes, events and characters of the Arthurian legend vary widely from text to text, and there is no one canonical version.
+                Arthurian literature thrived during the Middle Ages but waned in the centuries that followed, until it experienced a major resurgence in the 
+                19th century. In the 21st century, the legend continues to have prominence, not only in literature but also in adaptations for theatre, film,
+                television, comics and other media.
+            </p>
+        </div>
+        <div>
+        <button class="postLike" onclick="incrementCounter()">Like
+            <i style="font-size: 14px;font-weight: bolder;" class="fa fa-thumbs-up" aria-hidden="true"></i>
+
+        </button>
+        <p style="font-size: 10px; font-family: 'Abel', sans-serif;padding-left: 5px">
+            <spna style="font-size: 10px; font-family: 'Abel', sans-serif;padding-left: 5px" id="counterLikedBy">1</spna> person likes this!</p>
+        <div style="font-family: 'Abel', sans-serif; padding-left: 5px">Be the first one to like this!</div>
+    </div>
+
+
+        <div class="commentPost">
+            <textarea id="txtCommentCommentPost" class="commentPost" rows="4" cols="100" placeholder="Leave a comment"></textarea>
+        </div>
+        <button class="postLike" onclick="addComment()">Comment</button>
+        <div class="commentSection">
+            <h3>All Comments</h3>
+            <div class="allComments" id="listAllComments">
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Insert code for Like button, Comment button, Comment box here-->
+
+    <script src="..\scripts\post.js" defer></script>
+    <script src="..\scripts\header.js">             
+    </script>
+
+</body>
